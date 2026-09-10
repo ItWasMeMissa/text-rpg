@@ -1,0 +1,43 @@
+{
+"nibbit": {
+  "hp": 44,
+  "loot": {
+    "gold": 12
+    }
+},
+"small_grey_slime": {
+    "hp": 13,
+    "loot": {
+      "gold": 12
+    }
+},
+"big_grey_slime": {
+    "hp": 33,
+    "loot": {
+      "gold": 24}
+},
+"small_green_slime": {
+    "hp": 9,
+    "loot": {
+      "gold": 12
+    }
+},
+"big_green_slime": {
+    "hp": 27,
+    "loot": {
+      "gold": 24
+    }
+},
+"beetle":{
+    "hp": 39,
+    "loot":{
+      "gold":12
+    }
+},
+"spiter": {
+    "hp": 56,
+    "loot": {
+      "gold": 12
+    }
+}
+}

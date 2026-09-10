@@ -1,0 +1,73 @@
+{
+    "events_options": {
+        "berries": {
+            "text": "You find a bush covered with strange blue berries. Some look fresh, others have dark spots.",
+            "options": [
+                "Eat the berries",
+                "Collect a few",
+                "Leave"
+            ]
+        },
+        "altar": {
+            "text": "An ancient stone altar stands among the trees. Faded symbols still glow faintly.",
+            "options": [
+                "Pray",
+                "Offer a coin",
+                "Leave"
+            ]
+        },
+        "broken_cart": {
+            "text": "An abandoned cart lies beside the road. Most of the cargo is gone, but a few crates remain untouched.",
+            "options": [
+                "Search the cart",
+                "Break open a crate",
+                "Leave"
+            ]
+        },
+        "footprints": {
+            "text": "Fresh footprints disappear between the trees. They look human... but something seems off.",
+            "options": [
+                "Follow the tracks",
+                "Inspect them",
+                "Leave"
+            ]
+        },
+        "traveler": {
+            "text": "A tired traveler waves at you from the roadside.",
+            "options": [
+                "Talk",
+                "Trade",
+                "Ignore"
+            ]
+        }
+    },
+    "events_resalts": {
+        "altar": {
+            "0": "You close your eyes and wait.\nFor a moment, the forest becomes completely silent. Then the wind returns.\nNothing else happens.",
+            "1": "You place a coin on the altar.\n-5 gold\nThe faint symbols glow for a moment before fading again.",
+            "2": "A warm feeling suddenly fills your body ",
+            "3": "The coin disappears. You hear something move behind you.",
+            "4": "You leave the strange altar behind and continue down the road."
+        },
+        "berries": {
+            "0": "The berries taste surprisingly sweet +10 maxHP.\nA few moments later, you feel a strange warmth spreading through your body.",
+            "1": "You carefully pick some of the berries and put them away.\nMaybe they will be useful later.\n+item in inventory",
+            "2": "You decide that eating unknown berries is probably not worth the risk.\nNothing happens"
+        },
+        "broken_cart": {
+            "0": "You search through the remains of the cargo and find a few useful things hidden beneath the broken boards.",
+            "1": "You smash the crate open.\nMost of its contents are ruined, but something inside catches your attention.",
+            "2": "Whatever happened here, you decide it is better not to get involved."
+        },
+        "footprints":{
+            "0": "You follow the footprints deeper into the forest. They suddenly disappear.",
+            "1": "You crouch down and examine the tracks.\nThey are fresh, but something about them bothers you. The footprints look almost human.",
+            "2": "You decide that following unknown tracks into the forest is a terrible idea."
+        },
+        "traveler": {
+            "0": "The traveler introduces himself and tells you that he has been walking for days. He looks exhausted.",
+            "1": "The traveler opens his bag and shows you a few items he is willing to trade.",
+            "2": "You walk past the traveler. He watches you disappear down the road."
+        }
+    }
+}

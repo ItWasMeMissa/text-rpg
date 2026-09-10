@@ -1,0 +1,59 @@
+{
+    "option_0": {
+        "text": null,
+        "location": [
+            "forest"
+        ],
+        "price": 50,
+        "price_tilt": 10,
+        "func": null
+    },
+    "option_1": {
+        "text": null,
+        "location": [
+            "forest"
+        ],
+        "price": 50,
+        "price_tilt": 10,
+        "func": null
+    },
+    "option_2": {
+        "text": null,
+        "location": [
+            "forest"
+        ],
+        "price": 50,
+        "price_tilt": 10,
+        "func": null
+    },
+    "option_3": {
+        "text": null,
+        "location": [
+            "forest",
+            "abandoned_village"
+        ],
+        "price": 100,
+        "price_tilt": 20,
+        "func": null
+    },
+    "option_4": {
+        "text": null,
+        "location": [
+            "forest",
+            "abandoned_village"
+        ],
+        "price": 100,
+        "price_tilt": 20,
+        "func": null
+    },
+    "option_5": {
+        "text": null,
+        "location": [
+            "forest",
+            "abandoned_village"
+        ],
+        "price": 100,
+        "price_tilt": 20,
+        "func": null
+    }
+}

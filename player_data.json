@@ -1,0 +1,17 @@
+{
+    "player": {
+        "hp": 100,
+        "maxHP": 100,
+        "damage": 20,
+        "mana": 100,
+        "gold": 500,
+        "level": 0
+    },
+    "inventory": {
+        "small_potion": 5,
+        "apple": 10,
+        "coin_bag": 1
+    },
+    "statuses": ["armor_mod","damage_mod",
+        "vulnerable","weakness","thorns"]
+}

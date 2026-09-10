@@ -1,0 +1,99 @@
+{
+    "small_potion": {
+        "effects": {
+            "heal": 10,
+            "mana_gain": 25
+        },
+        "stackable": true
+    },
+    "average_potion": {
+        "effects": {
+            "heal": 25,
+            "mana_gain": 50
+        },
+        "stackable": true
+    },
+    "greate_potion": {
+        "effects": {
+            "heal": 75,
+            "mana_gain": 100
+        },
+        "stackable": true
+    },
+    "apple": {
+        "effects": {
+            "heal": 5
+        },
+        "stackable": true
+    },
+    "sword": {
+        "dmg": 20,
+        "stackable": false,
+        "equipable": true
+    },
+    "coin_bag": {
+        "effects": {
+            "gain_gold": 100
+        },
+        "stackable": true
+    },
+    "berries": {
+        "effects": {
+            "heal": 10
+        },
+        "stackable": true
+    },
+    "bandage": {
+        "effects": {
+            "heal": 15,
+            "dispels": [
+                "bleeding"
+            ]
+        },
+        "stackable": true
+    },
+    "Rusty Key": {
+        "stackable": false,
+                "shop": {
+            "price": 0,
+            "price_tilt": 0
+        }
+    },
+    "Anchor": {
+        "relic": true,
+        "stackable": false,
+        "price": 50,
+        "price_tilt": 10
+
+    },
+    "Bag of Marbles": {
+        "relic": true,
+        "stackable": false,
+        "price": 50,
+        "price_tilt": 10
+    },
+    "Bronze Scales": {
+        "relic": true,
+        "stackable": false,
+        "price": 50,
+        "price_tilt": 10
+    },
+    "Festive Popper": {
+        "relic": true,
+        "stackable": false,
+        "price": 50,
+        "price_tilt": 10
+    },
+    "Happy Flower": {
+        "relic": true,
+        "stackable": false,
+        "price": 50,
+        "price_tilt": 10
+    },
+    "Strike Dummy": {
+        "relic": true,
+        "stackable": false,
+        "price": 50,
+        "price_tilt": 10
+    }
+}
