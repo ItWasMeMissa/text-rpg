@@ -1,5 +1,5 @@
 import data
-import random, json
+import random, json, pytest
 from combat import combat_start, combat_info, fights
 from data import relic_classes, player, add
 
@@ -47,8 +47,6 @@ def unknown_event(func):
     events_list[func.__name__]['func'] = func
     return func
 
-
-#map info____________________________________________
 map_info = {
     'current_location': 'forest',
     'current_room': None,
@@ -61,7 +59,6 @@ map_info = {
     'current_event': None,
     'easy_fights_count': 0
     }
-#rooms____________________________________________
 rooms = {
     'monster':{
         'base':0.18,
@@ -80,12 +77,10 @@ rooms = {
         'increase': 0.02
     },
 }
-#roads____________________________________________
 roads = [
     ['forest', 'abandoned_village', 15],
     ['abandoned_village', 'cave_entrance', 15],
 ]
-
 for road in roads:
     loc_1, loc_2, steps = road
     locations[loc_1].setdefault('steps', {})
@@ -93,7 +88,7 @@ for road in roads:
     #___________________
     locations[loc_2].setdefault('steps', {})
     locations[loc_2]['steps'][loc_1] = steps
-#merchant_info____________________________________________
+
 merchant_pool = {
     'items': 3,
     'options': 2,
@@ -108,7 +103,6 @@ for location in locations:
         "items": [],
         "options": [],
     }
-
 for name, item in items.items():
     if "location" in item  and item['relic']:
         for location in item['locations']:
@@ -166,27 +160,22 @@ def create_nodes(steps):
 def choose_location():
     print('choose...')
     num = 1
-    num_of_loc = {}
+    next_location = {}
+    print(f'available roads')
     #text of possible roads
-    if map_info['next_location'] is None:
-        next_location = {}
-        print(f'available roads')
-        for e1, e2 in locations[map_info['current_location']]['steps'].items():
-            next_location[e1] = e2
-            num_of_loc[num] = {'next_location': e1, 'steps': e2}
-            print(f'{num}. {e1} ({e2} steps)')
-            num+=1
-    else:
-        print('selecting roads unavailable in pass')
+    for e1, e2 in locations[map_info['current_location']]['steps'].items():
+        next_location[num] = {'next_location': e1, 'steps': e2}
+        print(f'{num}. {e1} ({e2} steps)')
+        num+=1
     #choose num and ^set next location and steps
     while True:
         cmd = input('chose num to select road\n> ')
         try:
             cmd = int(cmd)
             if cmd < num:
-                for e in num_of_loc[cmd].items():
+                for e in next_location[cmd].items():
                     map_info[e[0]] = e[1]
-                map_info['steps'] = num_of_loc[cmd]['steps']
+                map_info['steps'] = next_location[cmd]['steps']
                 #cleaned ?
                 if locations[map_info['next_location']]['cleaned']:
                     end_road()
@@ -207,7 +196,7 @@ def choose_location():
 def end_road(clean=False):
     global nodes
     if clean:
-         locations[map_info['next_location']]['cleaned'] = True
+         locations[map_info['current_location']]['cleaned'] = True
     map_info['current_location'] = map_info['next_location']
     map_info['next_location'] = None
     map_info['steps'] = None
@@ -221,24 +210,26 @@ def end_road(clean=False):
     return
 
 #step
-map_info['current_steps'] = 0
 def road_step():
     if map_info['in_event']:
         print('u cant move in event')
         return
+
     if combat_info['in_combat']:
         print('u cant step in combat')
         return
-    map_info['current_steps'] += 1
-
-    room = nodes[map_info["current_steps"]]
-    map_info['current_room'] = room
-
-    node_script(room)
 
     if map_info['current_steps'] >= map_info['steps']:
         end_road(True)
         return
+
+    map_info['current_steps'] += 1
+
+    room = nodes[map_info["current_steps"]]
+    map_info['current_room'] = room
+    node_script(room)
+
+
 
 #node script
 def node_script(room):
@@ -343,14 +334,10 @@ def treasure():
     relic_classes.pop(random_relic)
     print(f'u get {random_relic.name}')
 
-
-
-
 @events
 def boss():
     map_info['in_event'] = True
     pass
-
 
 @events
 def unknown():
@@ -452,3 +439,30 @@ def traveler(info):
 #           f'    map_info["current_options"] = create_unknown_pool()\n'
 #           )
 
+def test_inv_event_move():
+    map_info['in_event'] = True
+    map_info['current_location'] = 'forest'
+
+    road_step()
+
+    assert map_info['current_location'] == 'forest'
+
+def test_cant_move_without_steps():
+    map_info['in_event'] = False
+    map_info['steps'] = 0
+    map_info['current_location'] = 'forest'
+
+    road_step()
+
+    assert map_info['current_location'] == 'forest'
+
+def test_move():
+    map_info['in_event'] = False
+    map_info['steps'] = 15
+    map_info['current_steps'] = 15
+    map_info['current_location'] = 'forest'
+    map_info['next_location'] = 'cave'
+
+    road_step()
+
+    assert map_info['current_location'] == 'cave'

@@ -205,11 +205,10 @@ def step(args):
     if map_info['in_event']:
         print('unavailable in event')
         return
-    if map_info['next_location'] is None:
+    if len(nodes) != 15:
         print('first choose location( map <?> )')
         return
     road_step()
-
 
 #choose in unknown_event and merchant_event
 def event_choice(option):
