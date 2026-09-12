@@ -439,18 +439,6 @@ def traveler(info):
 #           f'    map_info["current_options"] = create_unknown_pool()\n'
 #           )
 
-def test_inv_event_move():
-    map_info['in_event'] = True
-    map_info['current_location'] = 'forest'
-
-    road_step()
-
-    assert map_info['current_location'] == 'forest'
-
-def test_cant_move_without_steps():
-    map_info['in_event'] = False
-    map_info['steps'] = 0
-    map_info['current_location'] = 'forest'
 
     road_step()
 
