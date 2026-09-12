@@ -25,6 +25,7 @@ The game itself is not the main goal — the main goal is learning by building i
 
 ## Project structure
 
+```
 ├── main.py
 ├── commands.py
 ├── combat.py
@@ -39,6 +40,7 @@ The game itself is not the main goal — the main goal is learning by building i
 ├── requirements.txt
 └── tests/
     └── map_test.py
+```
 
 ## Requirements
 
@@ -56,7 +58,7 @@ python main.py
 
 pytest
 
-##Current state
+## Current state
 
 The project is still in development.
 
@@ -71,10 +73,10 @@ currently being refactored while I learn better Python practices.
 
 Things I'm currently learning include:
 
--Git
--dependency management with requirements.txt
--automated testing with pytest
--type hints
--decorators
--classes and object-oriented programming
--project structure and refactoring
+- Git
+- dependency management with requirements.txt
+- automated testing with pytest
+- type hints
+- decorators
+- classes and object-oriented programming
+- project structure and refactoring
