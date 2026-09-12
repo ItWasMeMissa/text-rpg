@@ -1,1 +1,80 @@
-10.6.2026 stat?
+# Text RPG
+
+A small terminal RPG written in Python.
+
+This project is primarily a learning project for getting comfortable with Python,
+project structure, Git, testing, classes, decorators, and working with a larger
+codebase.
+
+The game itself is not the main goal — the main goal is learning by building it.
+
+## Features
+
+- Terminal-based RPG
+- Player stats and inventory
+- Items and item effects
+- Multiple locations
+- Roads and random rooms
+- Random events
+- Merchants
+- Combat system
+- Different enemy behaviours
+- Relics with unique effects
+- Save/load system
+- Basic automated tests with pytest
+
+## Project structure
+
+├── main.py
+├── commands.py
+├── combat.py
+├── data.py
+├── data_file/
+│   └── map.py
+├── enemies.json
+├── events_data.json
+├── items.json
+├── options.json
+├── player_data.json
+├── requirements.txt
+└── tests/
+    └── map_test.py
+
+## Requirements
+
+- pytest
+
+## Installation
+
+pip install -r requirements.txt
+
+## Running the game
+
+python main.py
+
+## Running tests
+
+pytest
+
+##Current state
+
+The project is still in development.
+
+Some systems are unfinished or experimental, and parts of the code are
+currently being refactored while I learn better Python practices.
+
+## Why I made this
+
+"I'm using this project to learn how to work with a larger Python project rather than only writing small isolated scripts."
+
+## What I'm learning
+
+Things I'm currently learning include:
+
+-Git
+-dependency management with requirements.txt
+-automated testing with pytest
+-type hints
+-decorators
+-classes and object-oriented programming
+-project structure and refactoring
